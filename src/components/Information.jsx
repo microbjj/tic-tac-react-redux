@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { currentPlayerSelect, isDrawSelect, isGameEndedSelect } from "../store/selectors"
+import { resetGame } from "../store/actions.js"
 
 export function Information() {
     const dispatch = useDispatch()
@@ -8,7 +9,7 @@ export function Information() {
     const isGameEnded = useSelector(isGameEndedSelect)
     const currentPlayer = useSelector(currentPlayerSelect)
 
-    const resetGame2 = () => dispatch({ type: "RESET_GAME" })
+    const resetGame2 = () => dispatch(resetGame())
 
     return (
         <div className="w-full flex items-center h-28 border border-b-gray-900 -mx-px px-6 mb-4 rounded-2xl text-2xl justify-between">
